@@ -10,6 +10,9 @@ public class Evaluator {
             int num2 = Integer.parseInt(contents[2]);
             if (contents[1].equals("+")) result = add(num1, num2);
             if (contents[1].equals("-")) result = subtract(num1, num2);
+            if (contents[1].equals("*")) result = multiply(num1, num2);
+            if (contents[1].equals("/")) result = divide(num1, num2);
+
         } catch (Exception e) {
             System.err.println("something is wrong");
         }
@@ -22,6 +25,12 @@ public class Evaluator {
 
     private int add(int num1, int num2) {
         return num1 + num2;
+    }
+    private int multiply(int num1, int num2) {
+        return num1 * num2;
+    }
+    private int divide(int num1, int num2) {
+        return num1 / num2;
     }
 
 

@@ -38,6 +38,20 @@ public class EvaluatorTest extends Evaluator {
         int res = e.evaluate(str);
         assertEquals(res,35);
     }
+    @org.junit.Test
+    public void test_for_multiplication_of_two_numbers() throws Exception {
+        String str = "4 * 10";
+        Evaluator e = new Evaluator();
+        int res = e.evaluate(str);
+        assertEquals(res,40);
+    }
+    @org.junit.Test
+    public void test_for_division_of_two_numbers() throws Exception {
+        String str = "22 / 3";
+        Evaluator e = new Evaluator();
+        int res = e.evaluate(str);
+        assertEquals(res,7);
+    }
 
 }
 
