@@ -17,7 +17,7 @@ it will give 5
 
 * The expression takes only one operator (+) and two operands
 * spaces must be present in the expression between operands and operator.
-* Only positive Integers will be supported.
+* positive and negative integers will be supported.
 
 =======
 ### Release 0.2
@@ -27,4 +27,4 @@ it will give 6
 
 * The expression takes operators (+,-,*,/,^) and two operands.
 * spaces must be present in the expression between operands and operator.
-* Only positive Integers will be supported.
+* positive and negative integers will be supported.

@@ -10,6 +10,7 @@
         </fileset>
     </path>
     <taskdef classpathref="cobertura.classpath" resource="tasks.properties"/>
+
     <target name="compile" depends="clean">
         <mkdir dir="build/classes"></mkdir>
         <javac srcdir="src" destdir="build/classes" debug="yes">
@@ -30,8 +31,6 @@
             <classpath refid="cobertura.classpath" />
                </javac>
     </target>
-
-
 
     <target name="test" depends="test-compile">
         <junit failureproperty = "test.failed">

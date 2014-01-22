@@ -33,10 +33,10 @@ public class EvaluatorTest extends Evaluator {
     }
     @org.junit.Test
     public void test_for_subtraction_of_two_numbers() throws Exception {
-        String str = "45 - 10";
+        String str = "40 - 10";
         Evaluator e = new Evaluator();
         int res = e.evaluate(str);
-        assertEquals(res,35);
+        assertEquals(res,30);
     }
     @org.junit.Test
     public void test_for_multiplication_of_two_numbers() throws Exception {
