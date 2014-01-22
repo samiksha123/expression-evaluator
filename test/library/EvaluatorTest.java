@@ -52,6 +52,13 @@ public class EvaluatorTest extends Evaluator {
         int res = e.evaluate(str);
         assertEquals(res,7);
     }
+    @org.junit.Test
+    public void test_for_calculating_power_of_two_numbers() throws Exception {
+        String str = "2 ^ 3";
+        Evaluator e = new Evaluator();
+        int res = e.evaluate(str);
+        assertEquals(res,8);
+    }
 
 }
 

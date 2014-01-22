@@ -12,12 +12,14 @@ public class Evaluator {
             if (contents[1].equals("-")) result = subtract(num1, num2);
             if (contents[1].equals("*")) result = multiply(num1, num2);
             if (contents[1].equals("/")) result = divide(num1, num2);
+            if (contents[1].equals("^")) result = calculatePower(num1, num2);
 
         } catch (Exception e) {
             System.err.println("something is wrong");
         }
         return result;
     }
+
 
     private int subtract(int num1, int num2) {
         return num1 - num2;
@@ -32,7 +34,8 @@ public class Evaluator {
     private int divide(int num1, int num2) {
         return num1 / num2;
     }
-
-
+    private int calculatePower(int num1, int num2) {
+        return (int) Math.pow(num1, num2);
+    }
 }
 
