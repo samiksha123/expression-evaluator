@@ -8,7 +8,7 @@ public class Evaluator {
         int num2 = Integer.parseInt(contents[2]);
         int result = 0;
         if (contents[1].equals("+"))
-            result = add(num1, num2);
+            result = add(num1,num2);
         return result;
     }
     private int add(int num1, int num2) {
