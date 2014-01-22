@@ -18,3 +18,13 @@ it will give 5
 * The expression takes only one operator (+) and two operands
 * spaces must be present in the expression between operands and operator.
 * Only positive Integers will be supported.
+
+=======
+### Release 0.2
+*sh evaluator.sh "expression"*
+**ex:- sh evaluator.sh "2 * 3"
+it will give 6
+
+* The expression takes operators (+,-,*,/,^) and two operands.
+* spaces must be present in the expression between operands and operator.
+* Only positive Integers will be supported.

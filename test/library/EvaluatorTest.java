@@ -18,13 +18,6 @@ public class EvaluatorTest extends Evaluator {
         assertEquals(res,55);
     }
     @org.junit.Test
-    public void test_for_adding_two_numbers_without_giving_operator() throws Exception {
-        String str = "45 - 10";
-        Evaluator e = new Evaluator();
-        int res = e.evaluate(str);
-        assertEquals(res,0);
-    }
-    @org.junit.Test
     public void test_for_adding_two_numbers_if_space_is_not_given() throws Exception {
         String str = "45+10";
         Evaluator e = new Evaluator();
@@ -38,5 +31,13 @@ public class EvaluatorTest extends Evaluator {
         int res = e.evaluate(str);
         assertEquals(res,0);
     }
+    @org.junit.Test
+    public void test_for_subtraction_of_two_numbers() throws Exception {
+        String str = "45 - 10";
+        Evaluator e = new Evaluator();
+        int res = e.evaluate(str);
+        assertEquals(res,35);
+    }
+
 }
 
