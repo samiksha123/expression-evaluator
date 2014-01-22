@@ -1,4 +1,4 @@
-<project name="evaluator">
+<project name="expression-evaluator">
     <target name="clean">
         <delete dir="build"></delete>
     </target>
@@ -53,10 +53,6 @@
     </target>
 
     <target name="run-test" depends="test,exit"/>
-
-
-
-
 
 
     <target name="instrument" depends="run-test">
@@ -119,8 +115,6 @@
     <target name="coverage"
             depends="instrument,test-coverage,coverage-report,summary-coverage-report,alternate-coverage-report"
             description="Compile, instrument ourself, run the tests and generate JUnit and coverage reports."/>
-
-
 
     <target name="createDir" depends="coverage">
         <mkdir dir="evaluator_dist/lib"></mkdir>
