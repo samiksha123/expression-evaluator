@@ -132,8 +132,7 @@
     <target name="copyReadme" depends="moveSH">
         <copy file="README.md" todir="evaluator_dist"></copy>
     </target>
-    <target name="zipfile" depends="copyReadme">
-
+    <target name="dist" depends="copyReadme">
         <zip destfile="evaluator_dist.zip" basedir="evaluator_dist"/>
     </target>
 </project>

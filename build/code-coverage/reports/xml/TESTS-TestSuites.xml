@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="Insamiksha" id="0" name="EvaluatorTest" package="library" skipped="0" tests="8" time="0.096" timestamp="2014-01-22T12:42:29">
+  <testsuite errors="0" failures="0" hostname="Insamiksha" id="0" name="EvaluatorTest" package="library" skipped="0" tests="9" time="0.138" timestamp="2014-01-23T04:58:39">
       <properties>
-          <property name="ant.project.invoked-targets" value="zipfile" />
+          <property name="ant.project.invoked-targets" value="dist" />
 
           <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
 
@@ -98,7 +98,7 @@
 
           <property name="sun.arch.data.model" value="64" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner library.EvaluatorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,d:\projects\expression-evaluator\build\code-coverage\reports\xml\TEST-library.EvaluatorTest.xml crashfile=d:\projects\expression-evaluator\junitvmwatcher4111439088605775433.properties propsfile=d:\projects\expression-evaluator\junit8822265761243623555.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner library.EvaluatorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,d:\projects\expression-evaluator\build\code-coverage\reports\xml\TEST-library.EvaluatorTest.xml crashfile=d:\projects\expression-evaluator\junitvmwatcher687117825167277379.properties propsfile=d:\projects\expression-evaluator\junit2057122398009519328.properties" />
 
           <property name="java.home" value="c:\Program Files\Java\jdk1.7.0_11\jre" />
 
@@ -136,21 +136,23 @@
 
       </properties>
 
-      <testcase classname="library.EvaluatorTest" name="testEvaluate" time="0.002" />
+      <testcase classname="library.EvaluatorTest" name="test_for_adding_two_numbers" time="0.002" />
 
-      <testcase classname="library.EvaluatorTest" name="test_for_adding_two_numbers" time="0.0" />
-
-      <testcase classname="library.EvaluatorTest" name="test_for_adding_two_numbers_if_space_is_not_given" time="0.0" />
-
-      <testcase classname="library.EvaluatorTest" name="test_for_subtraction_of_two_numbers" time="0.0" />
-
-      <testcase classname="library.EvaluatorTest" name="test_if_only_one_operand_is_given" time="0.0" />
+      <testcase classname="library.EvaluatorTest" name="testEvaluate" time="0.0" />
 
       <testcase classname="library.EvaluatorTest" name="test_for_multiplication_of_two_numbers" time="0.0" />
+
+      <testcase classname="library.EvaluatorTest" name="test_for_subtraction_of_two_numbers" time="0.001" />
+
+      <testcase classname="library.EvaluatorTest" name="test_if_only_one_operand_is_given" time="0.0" />
 
       <testcase classname="library.EvaluatorTest" name="test_for_division_of_two_numbers" time="0.0" />
 
       <testcase classname="library.EvaluatorTest" name="test_for_calculating_power_of_two_numbers" time="0.0" />
+
+      <testcase classname="library.EvaluatorTest" name="test_for_evaluating_multiple_operations" time="0.0" />
+
+      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations" time="0.0" />
 
       <system-out><![CDATA[]]></system-out>
 

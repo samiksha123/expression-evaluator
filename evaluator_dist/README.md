@@ -11,6 +11,8 @@ evaluator evaluates the given expression.
 
 =======
 ### Release 0.1
+* Evaluator performs only addition *
+
 *sh evaluator.sh "expression"*
 **ex:- sh evaluator.sh "2 + 3"
 it will give 5
@@ -21,6 +23,8 @@ it will give 5
 
 =======
 ### Release 0.2
+* Evaluator performs basic arithmetic operations *
+
 *sh evaluator.sh "expression"*
 **ex:- sh evaluator.sh "2 * 3"
 it will give 6
