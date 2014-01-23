@@ -11,11 +11,22 @@ evaluator evaluates the given expression.
 
 
 
+### Release 0.4
+* Evaluator can perform basic arithmetic operations with brackets *
+
+*sh evaluator.sh "expression"*
+**ex:- sh evaluator.sh "2 + (3 * 4) / 2"**
+it will give 7
+
+* The expression takes operators (+,-,*,/,^),multiple operands and brackets.
+* No space is allow between brackets and operands.
+
+========
 ### Release 0.3
 * Evaluator can perform basic arithmetic operations with multiple operands *
 
 *sh evaluator.sh "expression"*
-**ex:- sh evaluator.sh "2 + 3 * 4 / 4 ^ 2"
+**ex:- sh evaluator.sh "2 + 3 * 4 / 4 ^ 2"**
 it will give 36
 
 * The expression takes operators (+,-,*,/,^) and multiple operands.
@@ -26,7 +37,7 @@ it will give 36
 * Evaluator can perform basic arithmetic operations *
 
 *sh evaluator.sh "expression"*
-**ex:- sh evaluator.sh "2 * 3"
+**ex:- sh evaluator.sh "2 * 3"**
 it will give 6
 
 * The expression takes operators (+,-,*,/,^) and two operands.

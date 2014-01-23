@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="Insamiksha" id="0" name="EvaluatorTest" package="library" skipped="0" tests="9" time="0.101" timestamp="2014-01-23T05:20:13">
+  <testsuite errors="0" failures="0" hostname="Insamiksha" id="0" name="EvaluatorTest" package="library" skipped="0" tests="12" time="0.096" timestamp="2014-01-23T09:00:17">
       <properties>
           <property name="ant.project.invoked-targets" value="dist" />
 
@@ -68,7 +68,7 @@
 
           <property name="sun.jnu.encoding" value="Cp1252" />
 
-          <property name="java.library.path" value="c:\Program Files\Java\jdk1.7.0_11\jre\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;c:\Users\samiksha\bin;.;C:\Program Files (x86)\Git\local\bin;C:\Program Files (x86)\Git\mingw\bin;C:\Program Files (x86)\Git\bin;c:\Program Files (x86)\RSA SecurID Token Common;c:\windows\system32;c:\windows;c:\windows\System32\Wbem;c:\windows\System32\WindowsPowerShell\v1.0\;c:\Program Files (x86)\Common Files\Roxio Shared\10.0\DLLShared\;c:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;c:\Program Files\TortoiseSVN\bin;c:\Program Files\Google\Google Apps Migration\;c:\Program Files\Google\Google Apps Sync\;c:\Program Files\nodejs\;d:\cygnus\cygnus\cygwin-b20\H-i586-cygwin32\bin;d:\phantomjs-1.9.2-windows;%UNIX_TOOLS%\bin;%PK_SH%\bin;%EVALUATOR_HOME%\bin;%UNIX_HOME%\bin;c:\Program Files\Java\jdk1.7.0_11\bin;c:\Users\samiksha\AppData\Roaming\npm;d:\projects\unix-tools\unix_tools\bin;d:\projects\tools\apache-ant-1.9.3-bin\apache-ant-1.9.3\bin;d:\projects\tools\cobertura-2.0.1-bin\cobertura-2.0.1;d:\prajakta\unix_tools\bin;d:\suraj\unix-tools\bin;d:\projects\evaluator\evaluator_dist\bin;d:\prajakta\expression-evaluator\bin;d:\shital\expression-evaluator\bin;.;." />
+          <property name="java.library.path" value="c:\Program Files\Java\jdk1.7.0_11\jre\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;c:\Users\samiksha\bin;.;C:\Program Files (x86)\Git\local\bin;C:\Program Files (x86)\Git\mingw\bin;C:\Program Files (x86)\Git\bin;c:\Program Files (x86)\RSA SecurID Token Common;c:\windows\system32;c:\windows;c:\windows\System32\Wbem;c:\windows\System32\WindowsPowerShell\v1.0\;c:\Program Files (x86)\Common Files\Roxio Shared\10.0\DLLShared\;c:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;c:\Program Files\TortoiseSVN\bin;c:\Program Files\Google\Google Apps Migration\;c:\Program Files\Google\Google Apps Sync\;c:\Program Files\nodejs\;d:\cygnus\cygnus\cygwin-b20\H-i586-cygwin32\bin;d:\phantomjs-1.9.2-windows;%UNIX_TOOLS%\bin;%PK_SH%\bin;%EVALUATOR_HOME%\bin;%UNIX_HOME%\bin;c:\Program Files\Java\jdk1.7.0_11\bin;c:\Users\samiksha\AppData\Roaming\npm;d:\projects\unix-tools\unix_tools\bin;d:\projects\tools\apache-ant-1.9.3-bin\apache-ant-1.9.3\bin;d:\projects\tools\cobertura-2.0.1-bin\cobertura-2.0.1;d:\prajakta\unix_tools\bin;d:\suraj\unix-tools\bin;d:\evaluatorTest\expr-eval\bin;d:\prajakta\expression-evaluator\bin;d:\shital\expression-evaluator\bin;.;." />
 
           <property name="java.class.version" value="51.0" />
 
@@ -98,7 +98,7 @@
 
           <property name="sun.arch.data.model" value="64" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner library.EvaluatorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,d:\projects\expression-evaluator\build\code-coverage\reports\xml\TEST-library.EvaluatorTest.xml crashfile=d:\projects\expression-evaluator\junitvmwatcher6894272468705721027.properties propsfile=d:\projects\expression-evaluator\junit669059597457215568.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner library.EvaluatorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,d:\projects\expression-evaluator\build\code-coverage\reports\xml\TEST-library.EvaluatorTest.xml crashfile=d:\projects\expression-evaluator\junitvmwatcher350699865368346439.properties propsfile=d:\projects\expression-evaluator\junit2737156024093024181.properties" />
 
           <property name="java.home" value="c:\Program Files\Java\jdk1.7.0_11\jre" />
 
@@ -136,23 +136,29 @@
 
       </properties>
 
-      <testcase classname="library.EvaluatorTest" name="test_for_adding_two_numbers" time="0.002" />
-
-      <testcase classname="library.EvaluatorTest" name="test_for_multiplication_of_two_numbers" time="0.001" />
-
-      <testcase classname="library.EvaluatorTest" name="test_for_subtraction_of_two_numbers" time="0.0" />
+      <testcase classname="library.EvaluatorTest" name="test_for_subtraction_of_two_numbers" time="0.002" />
 
       <testcase classname="library.EvaluatorTest" name="test_if_only_one_operand_is_given" time="0.0" />
 
-      <testcase classname="library.EvaluatorTest" name="test_for_division_of_two_numbers" time="0.001" />
+      <testcase classname="library.EvaluatorTest" name="test_for_multiplication_of_two_numbers" time="0.0" />
+
+      <testcase classname="library.EvaluatorTest" name="test_for_division_of_two_numbers" time="0.0" />
 
       <testcase classname="library.EvaluatorTest" name="test_for_calculating_power_of_two_numbers" time="0.0" />
 
-      <testcase classname="library.EvaluatorTest" name="test_for_evaluating_multiple_operations" time="0.0" />
+      <testcase classname="library.EvaluatorTest" name="test_for_evaluating_multiple_operations" time="0.001" />
 
       <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations" time="0.0" />
 
+      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_with_multiple_brackets" time="0.0" />
+
+      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_with_brackets" time="0.0" />
+
+      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_with_only_brackets" time="0.0" />
+
       <testcase classname="library.EvaluatorTest" name="testEvaluate" time="0.0" />
+
+      <testcase classname="library.EvaluatorTest" name="test_for_adding_two_numbers" time="0.0" />
 
       <system-out><![CDATA[]]></system-out>
 
