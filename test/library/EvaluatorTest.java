@@ -106,7 +106,15 @@ public class EvaluatorTest extends Evaluator {
     }
     @org.junit.Test
     public void test_for_evaluate_multiple_operations_for_negative() throws Exception {
-        String expression = "4.20 + 3.50";
+        String expression = "-4.20 + 2.50";
+        Evaluator e = new Evaluator();
+        double res = e.evaluateExpression(expression);
+        double expected = -1.7000000000000002;
+        assertEquals(res,expected);
+    }
+    @org.junit.Test
+    public void test_for_evaluate_multiple_operations_with_space_handling() throws Exception {
+        String expression = "4.20+3.50";
         Evaluator e = new Evaluator();
         double res = e.evaluateExpression(expression);
         double expected = 7.70;

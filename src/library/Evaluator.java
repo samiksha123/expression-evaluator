@@ -11,23 +11,22 @@ public class Evaluator {
         if (operator.equals("-")) result = num1 - num2;
         if (operator.equals("*")) result = num1 * num2;
         if (operator.equals("/")) result = num1 / num2;
-        if (operator.equals("^")) result = (float) Math.pow(num1, num2);
+        if (operator.equals("^")) result = (int) Math.pow(num1, num2);
         return result;
     }
-
     public double evaluateExpression(String expression) throws Exception {
-        if (!expression.contains(" ")) return Double.parseDouble(expression);
-        if (expression.contains("(")) {
-            String res = evaluateWithBrackets(expression);
+        String exp = replaceExpression(expression);
+        if (!exp.contains(" ")) return Double.parseDouble(exp);
+        if (exp.contains("(")) {
+            String res = evaluateWithBrackets(exp);
             return evaluateExpression(res);
         }
-        String[] data = expression.split(" ");
+        String[] data = exp.split(" ");
         List<Double> operands = new ArrayList<Double>();
         List<String> operators = getOperators(data, operands);
         double result = evaluateMultipleOperations(operands, operators);
         return result;
     }
-
     private String evaluateWithBrackets(String expression) throws Exception {
         StringBuffer sb = new StringBuffer(expression);
         int startIndex = 0, endIndex = 0;
@@ -68,5 +67,16 @@ public class Evaluator {
             return operators;
         list.add("wrong input");
         return list;
+    }
+    public String replaceExpression(String expression) {
+        return expression.trim().replaceAll(" +", "")
+                .replaceAll("\\+", " + ")
+                .replaceAll("\\-", " - ")
+                .replaceAll("\\*", " * ")
+                .replaceAll("\\/", " / ")
+                .replaceAll("\\(", "(")
+                .replaceAll("\\)", ")")
+                .replaceAll("\\^", " ^ ")
+                .replaceFirst("^ - ", "-");
     }
 }

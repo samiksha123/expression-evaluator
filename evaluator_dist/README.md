@@ -9,6 +9,14 @@ evaluator evaluates the given expression.
 * Set the environment variable with the name of `EVALUATOR_HOME`.
 * Use shell file to run evaluator.
 
+### Release 0.5
+* handling space"
+
+*sh evaluator.sh "expression"*
+**ex:- sh evaluator.sh "2.40+3.50"**
+it will give 6.90
+
+=========
 
 ### Release 0.5
 * Evaluator can perform basic arithmetic operations of floating numbers *
