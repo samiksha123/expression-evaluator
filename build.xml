@@ -1,4 +1,4 @@
-<project name="expression-evaluator">
+<project name="expression-evaluator" default = "dist">
     <target name="clean">
         <delete dir="build"></delete>
     </target>
@@ -116,23 +116,23 @@
             description="Compile, instrument ourself, run the tests and generate JUnit and coverage reports."/>
 
     <target name="createDir" depends="coverage">
-        <mkdir dir="evaluator_dist/lib"></mkdir>
-        <mkdir dir="evaluator_dist/bin"></mkdir>
+        <mkdir dir="build/dist/lib"></mkdir>
+        <mkdir dir="build/dist/bin"></mkdir>
         <copy file="README.md" todir="evaluator_dist"/>
     </target>
     <target name="createJar" depends="createDir">
-        <jar destfile="evaluator_dist/lib/evaluator.jar" basedir="build/classes"></jar>
+        <jar destfile="build/dist/lib/expression-evaluator.jar" basedir="build/classes"></jar>
 
     </target>
     <target name="moveSH" depends="createJar">
-        <copy todir="evaluator_dist/bin">
+        <copy todir="build/dist/bin">
             <fileset dir="shFiles"/>
         </copy>
     </target>
     <target name="copyReadme" depends="moveSH">
-        <copy file="README.md" todir="evaluator_dist"></copy>
+        <copy file="README.md" todir="build/dist"></copy>
     </target>
     <target name="dist" depends="copyReadme">
-        <zip destfile="evaluator_dist.zip" basedir="evaluator_dist"/>
+        <zip destfile="expression-evaluator.zip" basedir="build/dist"/>
     </target>
 </project>
