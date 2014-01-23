@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="Insamiksha" id="0" name="EvaluatorTest" package="library" skipped="0" tests="9" time="0.138" timestamp="2014-01-23T04:58:39">
+  <testsuite errors="0" failures="0" hostname="Insamiksha" id="0" name="EvaluatorTest" package="library" skipped="0" tests="9" time="0.101" timestamp="2014-01-23T05:20:13">
       <properties>
           <property name="ant.project.invoked-targets" value="dist" />
 
@@ -98,7 +98,7 @@
 
           <property name="sun.arch.data.model" value="64" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner library.EvaluatorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,d:\projects\expression-evaluator\build\code-coverage\reports\xml\TEST-library.EvaluatorTest.xml crashfile=d:\projects\expression-evaluator\junitvmwatcher687117825167277379.properties propsfile=d:\projects\expression-evaluator\junit2057122398009519328.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner library.EvaluatorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,d:\projects\expression-evaluator\build\code-coverage\reports\xml\TEST-library.EvaluatorTest.xml crashfile=d:\projects\expression-evaluator\junitvmwatcher6894272468705721027.properties propsfile=d:\projects\expression-evaluator\junit669059597457215568.properties" />
 
           <property name="java.home" value="c:\Program Files\Java\jdk1.7.0_11\jre" />
 
@@ -138,21 +138,21 @@
 
       <testcase classname="library.EvaluatorTest" name="test_for_adding_two_numbers" time="0.002" />
 
-      <testcase classname="library.EvaluatorTest" name="testEvaluate" time="0.0" />
+      <testcase classname="library.EvaluatorTest" name="test_for_multiplication_of_two_numbers" time="0.001" />
 
-      <testcase classname="library.EvaluatorTest" name="test_for_multiplication_of_two_numbers" time="0.0" />
-
-      <testcase classname="library.EvaluatorTest" name="test_for_subtraction_of_two_numbers" time="0.001" />
+      <testcase classname="library.EvaluatorTest" name="test_for_subtraction_of_two_numbers" time="0.0" />
 
       <testcase classname="library.EvaluatorTest" name="test_if_only_one_operand_is_given" time="0.0" />
 
-      <testcase classname="library.EvaluatorTest" name="test_for_division_of_two_numbers" time="0.0" />
+      <testcase classname="library.EvaluatorTest" name="test_for_division_of_two_numbers" time="0.001" />
 
       <testcase classname="library.EvaluatorTest" name="test_for_calculating_power_of_two_numbers" time="0.0" />
 
       <testcase classname="library.EvaluatorTest" name="test_for_evaluating_multiple_operations" time="0.0" />
 
       <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations" time="0.0" />
+
+      <testcase classname="library.EvaluatorTest" name="testEvaluate" time="0.0" />
 
       <system-out><![CDATA[]]></system-out>
 

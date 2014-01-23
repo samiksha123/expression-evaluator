@@ -66,4 +66,25 @@ public class EvaluatorTest extends Evaluator {
         int res = e.evaluateExpression(expression);
         assertEquals(res,33);
     }
+    @org.junit.Test
+    public void test_for_evaluate_multiple_operations_with_brackets() throws Exception {
+        String expression = "4 + (5 * 2) / 2";
+        Evaluator e = new Evaluator();
+        int res = e.evaluateExpression(expression);
+        assertEquals(res,7);
+    }
+    @org.junit.Test
+    public void test_for_evaluate_multiple_operations_with_multiple_brackets() throws Exception {
+        String expression = "4 + (5 * 2) / 2 - (2 / 2)";
+        Evaluator e = new Evaluator();
+        int res = e.evaluateExpression(expression);
+        assertEquals(res,6);
+    }
+//    @org.junit.Test
+//    public void test_for_evaluate_multiple_operations_with_brackets_inside_brackets() throws Exception {
+//        String expression = "4 + (5 * 2 + (3 + 1) - 2)";
+//        Evaluator e = new Evaluator();
+//        int res = e.evaluateExpression(expression);
+//        assertEquals(res,16);
+//    }
 }
