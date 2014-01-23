@@ -48,7 +48,7 @@ it will give 6
 * Evaluator can perform only addition *
 
 *sh evaluator.sh "expression"*
-**ex:- sh evaluator.sh "2 + 3"
+**ex:- sh evaluator.sh "2 + 3"**
 it will give 5
 
 * The expression takes only one operator (+) and two operands
