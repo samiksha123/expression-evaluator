@@ -44,7 +44,8 @@ public class EvaluatorTest extends Evaluator {
         String expression = "22 / 3";
         Evaluator e = new Evaluator();
         double res = e.evaluateExpression(expression);
-        assertEquals(res,7.0);
+        double expected = 7.333333333333333;
+        assertEquals(res,expected);
     }
     @org.junit.Test
     public void test_for_calculating_power_of_two_numbers() throws Exception {

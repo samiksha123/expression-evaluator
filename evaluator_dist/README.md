@@ -10,6 +10,17 @@ evaluator evaluates the given expression.
 * Use shell file to run evaluator.
 
 
+### Release 0.5
+* Evaluator can perform basic arithmetic operations of floating numbers *
+
+*sh evaluator.sh "expression"*
+**ex:- sh evaluator.sh "2.40 + 3.50"**
+it will give 6.90
+
+* The expression takes operators (+,-,*,/,^),multiple operands and float,double and integer.
+
+========
+
 
 ### Release 0.4
 * Evaluator can perform basic arithmetic operations with brackets *
@@ -48,7 +59,7 @@ it will give 6
 * Evaluator can perform only addition *
 
 *sh evaluator.sh "expression"*
-**ex:- sh evaluator.sh "2 + 3"
+**ex:- sh evaluator.sh "2 + 3"**
 it will give 5
 
 * The expression takes only one operator (+) and two operands
