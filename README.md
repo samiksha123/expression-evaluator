@@ -15,7 +15,7 @@ evaluator evaluates the given expression.
 * Evaluator can perform basic arithmetic operations with multiple operands *
 
 *sh evaluator.sh "expression"*
-**ex:- sh evaluator.sh "2 + 3 * 4 / 4 ^ 2"
+**ex:- sh evaluator.sh "2 + 3 * 4 / 4 ^ 2"**
 it will give 36
 
 * The expression takes operators (+,-,*,/,^) and multiple operands.
@@ -26,7 +26,7 @@ it will give 36
 * Evaluator can perform basic arithmetic operations *
 
 *sh evaluator.sh "expression"*
-**ex:- sh evaluator.sh "2 * 3"
+**ex:- sh evaluator.sh "2 * 3"**
 it will give 6
 
 * The expression takes operators (+,-,*,/,^) and two operands.
@@ -37,7 +37,7 @@ it will give 6
 * Evaluator can perform only addition *
 
 *sh evaluator.sh "expression"*
-**ex:- sh evaluator.sh "2 + 3"
+**ex:- sh evaluator.sh "2 + 3"**
 it will give 5
 
 * The expression takes only one operator (+) and two operands
