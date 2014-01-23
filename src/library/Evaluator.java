@@ -29,8 +29,15 @@ public class Evaluator {
 
     private String evaluateWithBrackets(String expression) throws Exception {
         StringBuffer sb = new StringBuffer(expression);
-        int endIndex = expression.lastIndexOf(")");
-        int startIndex = expression.indexOf("(");
+        int startIndex = 0,endIndex = 0;
+        for (int i = 0; i < expression.length() ; i++) {
+            if(expression.charAt(i) == '(')
+                startIndex = i;
+            else if(expression.charAt(i) == ')'){
+                endIndex = i;
+                 break;
+            }
+        }
         String expressionInBrackets = expression.substring(startIndex + 1, endIndex);
         int res = evaluateExpression(expressionInBrackets);
         sb.replace(startIndex, endIndex + 1, Integer.toString(res));
