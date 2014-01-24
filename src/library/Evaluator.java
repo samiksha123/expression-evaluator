@@ -14,8 +14,10 @@ public class Evaluator {
         if (operator.equals("^")) result = (int) Math.pow(num1, num2);
         return result;
     }
+
     public double evaluateExpression(String expression) throws Exception {
         String exp = replaceExpression(expression);
+        exp = exp.replace("--","");
         if (!exp.contains(" ")) return Double.parseDouble(exp);
         if (exp.contains("(")) {
             String res = evaluateWithBrackets(exp);
@@ -54,7 +56,6 @@ public class Evaluator {
 
     private List<String> getOperators(String[] data, List<Double> operands) {
         List<String> operators = new ArrayList<String>();
-        List list = new ArrayList();
         for (String s : data) {
             try {
                 Double number = Double.parseDouble(s);
@@ -63,10 +64,7 @@ public class Evaluator {
                 operators.add(s);
             }
         }
-        if (operands.size() - 1 == operators.size())
-            return operators;
-        list.add("wrong input");
-        return list;
+        return operators;
     }
     public String replaceExpression(String expression) {
         return expression.trim().replaceAll(" +", "")
@@ -77,6 +75,7 @@ public class Evaluator {
                 .replaceAll("\\(", "(")
                 .replaceAll("\\)", ")")
                 .replaceAll("\\^", " ^ ")
+                .replaceAll("  - ", " -")
                 .replaceFirst("^ - ", "-");
     }
 }

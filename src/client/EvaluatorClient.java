@@ -1,7 +1,7 @@
-package client;
+package
+        client;
 
 import library.Evaluator;
-
 
 public class EvaluatorClient {
     public static void main(String[] args) throws Exception {
