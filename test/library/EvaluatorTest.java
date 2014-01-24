@@ -165,7 +165,7 @@ public class EvaluatorTest extends Evaluator {
     @org.junit.Test
     public void test_for_evaluate_multiple_operations_() throws Exception {
         Evaluator e = new Evaluator();
-        double res = e.evaluateExpression("30 -                         50+           10");
+        double res = e.evaluateExpression("30 - 50+10");
         assertEquals(res,-10.0);
     }
     @org.junit.Test
@@ -173,5 +173,11 @@ public class EvaluatorTest extends Evaluator {
         Evaluator e = new Evaluator();
         double res = e.evaluateExpression("-(-1)");
         assertEquals(res,1.0);
+    }
+    @org.junit.Test
+    public void test_for_evaluate_multiple_operations_3() throws Exception {
+        Evaluator e = new Evaluator();
+        double res = e.evaluateExpression("(((((20)))))");
+        assertEquals(res,20.0);
     }
 }

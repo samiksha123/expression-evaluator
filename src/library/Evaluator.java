@@ -18,11 +18,11 @@ public class Evaluator {
     public double evaluateExpression(String expression) throws Exception {
         String exp = replaceExpression(expression);
         exp = exp.replace("--","");
-        if (!exp.contains(" ")) return Double.parseDouble(exp);
         if (exp.contains("(")) {
             String res = evaluateWithBrackets(exp);
             return evaluateExpression(res);
         }
+        if (!exp.contains(" ")) return Double.parseDouble(exp);
         String[] data = exp.split(" ");
         List<Double> operands = new ArrayList<Double>();
         List<String> operators = getOperators(data, operands);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="Insamiksha" id="0" name="EvaluatorTest" package="library" skipped="0" tests="25" time="0.113" timestamp="2014-01-24T05:55:38">
+  <testsuite errors="0" failures="0" hostname="Insamiksha" id="0" name="EvaluatorTest" package="library" skipped="0" tests="26" time="0.123" timestamp="2014-01-24T06:45:27">
       <properties>
           <property name="ant.project.invoked-targets" value="dist" />
 
@@ -98,7 +98,7 @@
 
           <property name="java.vm.specification.version" value="1.7" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner library.EvaluatorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,d:\projects\expression-evaluator\build\code-coverage\reports\xml\TEST-library.EvaluatorTest.xml crashfile=d:\projects\expression-evaluator\junitvmwatcher8850256617987901584.properties propsfile=d:\projects\expression-evaluator\junit4466084903801902986.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner library.EvaluatorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,d:\projects\expression-evaluator\build\code-coverage\reports\xml\TEST-library.EvaluatorTest.xml crashfile=d:\projects\expression-evaluator\junitvmwatcher7387355413017843728.properties propsfile=d:\projects\expression-evaluator\junit1475667864830251324.properties" />
 
           <property name="java.home" value="c:\Program Files\Java\jdk1.7.0_11\jre" />
 
@@ -138,11 +138,13 @@
 
       </properties>
 
-      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_with_brackets_inside_brackets" time="0.004" />
+      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_with_brackets_and_spaces_inside_brackets" time="0.004" />
 
-      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_with_brackets_and_spaces_inside_brackets" time="0.001" />
+      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_with_brackets_inside_brackets" time="0.001" />
 
       <testcase classname="library.EvaluatorTest" name="testEvaluate" time="0.0" />
+
+      <testcase classname="library.EvaluatorTest" name="test_for_adding_two_numbers" time="0.0" />
 
       <testcase classname="library.EvaluatorTest" name="test_for_subtraction_of_two_numbers" time="0.0" />
 
@@ -152,17 +154,17 @@
 
       <testcase classname="library.EvaluatorTest" name="test_for_subtraction_of_negative_numbers" time="0.0" />
 
-      <testcase classname="library.EvaluatorTest" name="test_for_division_of_two_numbers" time="0.0" />
+      <testcase classname="library.EvaluatorTest" name="test_for_division_of_two_numbers" time="0.001" />
 
-      <testcase classname="library.EvaluatorTest" name="test_for_calculating_power_of_two_numbers" time="0.001" />
+      <testcase classname="library.EvaluatorTest" name="test_for_calculating_power_of_two_numbers" time="0.0" />
 
       <testcase classname="library.EvaluatorTest" name="test_for_evaluating_multiple_operations" time="0.0" />
 
       <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations" time="0.0" />
 
-      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_exponential" time="0.0" />
+      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_exponential" time="0.001" />
 
-      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_exponential_2" time="0.001" />
+      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_exponential_2" time="0.0" />
 
       <testcase classname="library.EvaluatorTest" name="test_for_evaluate_exponential_3" time="0.0" />
 
@@ -170,9 +172,11 @@
 
       <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_2" time="0.0" />
 
+      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_3" time="0.001" />
+
       <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_for_negative" time="0.0" />
 
-      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_of_float" time="0.0" />
+      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_of_float" time="0.001" />
 
       <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_with_brackets" time="0.001" />
 
@@ -180,13 +184,11 @@
 
       <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_with_only_brackets" time="0.001" />
 
-      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_with_space_handling" time="0.0" />
+      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_with_space_handling" time="0.001" />
 
       <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_with_space_handling2" time="0.0" />
 
-      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_with_handling3" time="0.001" />
-
-      <testcase classname="library.EvaluatorTest" name="test_for_adding_two_numbers" time="0.0" />
+      <testcase classname="library.EvaluatorTest" name="test_for_evaluate_multiple_operations_with_handling3" time="0.0" />
 
       <system-out><![CDATA[]]></system-out>
 
