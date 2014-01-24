@@ -11,7 +11,7 @@ public class Evaluator {
         if (operator.equals("-")) result = num1 - num2;
         if (operator.equals("*")) result = num1 * num2;
         if (operator.equals("/")) result = num1 / num2;
-        if (operator.equals("^")) result = (int) Math.pow(num1, num2);
+        if (operator.equals("^")) result = Math.pow(num1, num2);
         return result;
     }
 

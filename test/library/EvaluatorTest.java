@@ -180,4 +180,22 @@ public class EvaluatorTest extends Evaluator {
         double res = e.evaluateExpression("(((((20)))))");
         assertEquals(res,20.0);
     }
+    @org.junit.Test
+    public void test_for_evaluate_multiple_operations_4() throws Exception {
+        Evaluator e = new Evaluator();
+        double res = e.evaluateExpression("((-2))");
+        assertEquals(res,-2.0);
+    }
+    @org.junit.Test
+    public void test_for_evaluate_multiple_operations_5() throws Exception {
+        Evaluator e = new Evaluator();
+        double res = e.evaluateExpression("((-2))");
+        assertEquals(res,-2.0);
+    }
+    @org.junit.Test
+    public void test_for_evaluate_multiple_operations_6() throws Exception {
+        Evaluator e = new Evaluator();
+        double res = e.evaluateExpression("2 ^ (-3)");
+        assertEquals(res,0.125);
+    }
 }
