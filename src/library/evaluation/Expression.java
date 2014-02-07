@@ -6,6 +6,7 @@ import java.util.List;
 public class Expression {
     private Double value;
     private List<Expression> operands = new ArrayList<>();
+    private List<String> operators;
 
     public Expression(Double value) {
         this.value = value;
@@ -13,8 +14,6 @@ public class Expression {
 
     public Expression() {
     }
-
-
 
     public double evaluateExpression(String expr) throws Exception {
         String expression = new Parser(expr).replaceExpression(expr);
@@ -25,7 +24,7 @@ public class Expression {
         }
         if (!expression.contains(" ")) return Double.parseDouble(expression);
         String[] data = expression.split(" ");
-        List<String> operators = getOperators(data);
+        this.operators = getOperators(data);
         this.operands = getOperands(data);
         List<Double> values = new ArrayList<>();
         for (Expression sd : operands) {
