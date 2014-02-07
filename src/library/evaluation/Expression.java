@@ -16,23 +16,25 @@ public class Expression {
     }
 
     public double evaluateExpression(String expr) throws Exception {
-        String expression = new Parser(expr).replaceExpression(expr);
-        expression = expression.replace("--", "");
+        String expression = clean(expr);
+
         if (expression.contains("(")) {
             String res = evaluateWithBrackets(expression);
             return new Expression().evaluateExpression(res);
         }
+
         if (!expression.contains(" ")) return Double.parseDouble(expression);
         String[] data = expression.split(" ");
+
         this.operators = getOperators(data);
         this.operands = getOperands(data);
-        List<Double> values = new ArrayList<>();
-        for (Expression sd : operands) {
-            values.add(sd.value);
-        }
 
-        double result = evaluate(values, operators);
-        return result;
+        return evaluate();
+    }
+
+
+    private String clean(String expr) {
+        return new Parser(expr).replaceExpression(expr).replace("--", "");
     }
 
     private String evaluateWithBrackets(String expression) throws Exception {
@@ -51,11 +53,11 @@ public class Expression {
         return sb.toString();
     }
 
-    private double evaluate(List<Double> operands, List<String> operators) throws Exception {
+    private double evaluate(){
         Operators calculator = new Operators();
-        double result = calculator.operate(operands.get(0), operators.get(0), operands.get(1));
+        double result = calculator.operate(operands.get(0).value, operators.get(0), operands.get(1).value);
         for (int i = 1; i < operators.size(); i++) {
-            result = calculator.operate(result, operators.get(i), operands.get(i + 1));
+            result = calculator.operate(result, operators.get(i), operands.get(i + 1).value);
         }
         return result;
     }
