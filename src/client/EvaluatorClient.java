@@ -1,10 +1,10 @@
 package client;
 
-import library.evaluation.Evaluator;
+import library.evaluation.Expression;
 
 public class EvaluatorClient {
     public static void main(String[] args) throws Exception {
-        Evaluator e = new Evaluator();
+        Expression e = new Expression();
         System.out.println(e.evaluateExpression(args[0]));
     }
 }

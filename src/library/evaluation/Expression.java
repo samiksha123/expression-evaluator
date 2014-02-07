@@ -5,18 +5,18 @@ import java.util.List;
 public class Evaluator {
 
 
-    public double evaluateExpression(String expr) throws Exception {
-        String expression = Parser.format(expr);
-        expression = expression.replace("--", "");
-        if (expression.contains("(")) {
-            String res = evaluateWithBrackets(expression);
+    public double evaluateExpression(String expression) throws Exception {
+        String expr = replaceExpression(expression);
+        expr = expr.replace("--", "");
+        if (expr.contains("(")) {
+            String res = evaluateWithBrackets(expr);
             return evaluateExpression(res);
         }
-        if (!expression.contains(" ")) return Double.parseDouble(expression);
+        if (!expr.contains(" ")) return Double.parseDouble(expr);
         List<Double> operands = new ArrayList<Double>();
         List<String> operators = new ArrayList<String>();
 
-        Parser.parse(expression,operators,operands);
+        Parser.parse(expr,operators,operands);
 
         double result = evaluateMultipleOperations(operands, operators);
         return result;
@@ -47,5 +47,16 @@ public class Evaluator {
         return result;
     }
 
-
+    public String replaceExpression(String expression) {
+        return expression.trim().replaceAll(" +", "")
+                .replaceAll("\\+", " + ")
+                .replaceAll("\\-", " - ")
+                .replaceAll("\\*", " * ")
+                .replaceAll("\\/", " / ")
+                .replaceAll("\\(", "(")
+                .replaceAll("\\)", ")")
+                .replaceAll("\\^", " ^ ")
+                .replaceAll("  - ", " -")
+                .replaceFirst("^ - ", "-");
+    }
 }

@@ -3,7 +3,7 @@ package library.evaluation;
 import java.util.List;
 
 /**
- *resolve (a expression) into its component parts.
+ *resolve (a expression as String) into its component parts.
  */
 public class Parser {
 
@@ -20,15 +20,4 @@ public class Parser {
                 .replaceFirst("^ - ", "-");
     }
 
-    static void parse(String expression, List<String> operators, List<Double> operands) {
-        String[] data = expression.split(" ");
-        for (String s : data) {
-            try {
-                Double number = Double.parseDouble(s);
-                operands.add(number);
-            } catch (Exception ex) {
-                operators.add(s);
-            }
-        }
-    }
 }
