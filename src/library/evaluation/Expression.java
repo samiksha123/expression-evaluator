@@ -4,32 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Expression {
-    private Double value;
-    private List<Expression> operands = new ArrayList<>();
+    Double value;
+    private List<Expression> expressions = new ArrayList<>();
     private List<String> operators;
+
+    public Expression() {
+    }
 
     public Expression(Double value) {
         this.value = value;
     }
 
-    public Expression() {
+    public Expression(List<Expression> expressions, List<String> operators){
+        this.expressions = expressions;
+        this.operators = operators;
     }
 
-    public double evaluateExpression(String expr) throws Exception {
-        String expression = clean(expr);
+    public Expression evaluateExpression(String expr) throws Exception {
+        String cleanedExpression = clean(expr);
 
-        if (expression.contains("(")) {
-            String res = evaluateWithBrackets(expression);
+        if (cleanedExpression.contains("(")) {
+            String res = evaluateWithBrackets(cleanedExpression);
             return new Expression().evaluateExpression(res);
         }
 
-        if (!expression.contains(" ")) return Double.parseDouble(expression);
-        String[] data = expression.split(" ");
+        if (!cleanedExpression.contains(" "))
+            return new Expression(Double.parseDouble(cleanedExpression));
 
-        this.operators = getOperators(data);
-        this.operands = getOperands(data);
-
-        return evaluate();
+        String[] data = cleanedExpression.split(" ");
+        return new Expression(getOperands(data), getOperators(data)).evaluate();
     }
 
 
@@ -48,18 +51,18 @@ public class Expression {
             }
         }
         String expressionInBrackets = expression.substring(startIndex + 1, endIndex);
-        double res = evaluateExpression(expressionInBrackets);
-        sb.replace(startIndex, endIndex + 1, Double.toString(res));
+        sb.replace(startIndex, endIndex + 1, String.valueOf(evaluateExpression(expressionInBrackets).value));
         return sb.toString();
     }
 
-    private double evaluate(){
+    private Expression evaluate(){
         Operators calculator = new Operators();
-        double result = calculator.operate(operands.get(0).value, operators.get(0), operands.get(1).value);
+        double result = calculator.operate(expressions.get(0).value, operators.get(0), expressions.get(1).value);
         for (int i = 1; i < operators.size(); i++) {
-            result = calculator.operate(result, operators.get(i), operands.get(i + 1).value);
+            result = calculator.operate(result, operators.get(i), expressions.get(i + 1).value);
         }
-        return result;
+        this.value = result;
+        return this;
     }
 
     private List<String> getOperators(String[] data) {
@@ -71,7 +74,6 @@ public class Expression {
                 operators.add(s);
             }
         }
-
         return operators;
     }
 
@@ -85,7 +87,6 @@ public class Expression {
                 // ignore
             }
         }
-
         return expressions;
     }
 
