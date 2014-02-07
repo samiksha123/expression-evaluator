@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Expression {
+    private Double value;
     private List<Expression> operands = new ArrayList<>();
 
     public Expression(Double value) {
@@ -12,8 +13,6 @@ public class Expression {
 
     public Expression() {
     }
-
-    private Double value;
 
 
 
@@ -33,7 +32,7 @@ public class Expression {
             values.add(sd.value);
         }
 
-        double result = evaluateMultipleOperations(values, operators);
+        double result = evaluate(values, operators);
         return result;
     }
 
@@ -53,11 +52,11 @@ public class Expression {
         return sb.toString();
     }
 
-    private double evaluateMultipleOperations(List<Double> operands, List<String> operators) throws Exception {
-        Calculator calculator = new Calculator();
-        double result = calculator.calculate(operands.get(0), operators.get(0), operands.get(1));
+    private double evaluate(List<Double> operands, List<String> operators) throws Exception {
+        Operators calculator = new Operators();
+        double result = calculator.operate(operands.get(0), operators.get(0), operands.get(1));
         for (int i = 1; i < operators.size(); i++) {
-            result = calculator.calculate(result, operators.get(i), operands.get(i + 1));
+            result = calculator.operate(result, operators.get(i), operands.get(i + 1));
         }
         return result;
     }
