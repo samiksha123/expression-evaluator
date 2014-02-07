@@ -1,23 +1,13 @@
-package library;
+package library.evaluation;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class Evaluator {
 
-    private double evaluate(double num1, String operator, double num2) {
-        double result = 0.0;
-        if (operator.equals("+")) result = num1 + num2;
-        if (operator.equals("-")) result = num1 - num2;
-        if (operator.equals("*")) result = num1 * num2;
-        if (operator.equals("/")) result = num1 / num2;
-        if (operator.equals("^")) result = Math.pow(num1, num2);
-        return result;
-    }
 
     public double evaluateExpression(String expression) throws Exception {
         String exp = replaceExpression(expression);
-        exp = exp.replace("--","");
+        exp = exp.replace("--", "");
         if (exp.contains("(")) {
             String res = evaluateWithBrackets(exp);
             return evaluateExpression(res);
@@ -29,6 +19,7 @@ public class Evaluator {
         double result = evaluateMultipleOperations(operands, operators);
         return result;
     }
+
     private String evaluateWithBrackets(String expression) throws Exception {
         StringBuffer sb = new StringBuffer(expression);
         int startIndex = 0, endIndex = 0;
@@ -46,10 +37,10 @@ public class Evaluator {
     }
 
     private double evaluateMultipleOperations(List<Double> operands, List<String> operators) throws Exception {
-        Evaluator e = new Evaluator();
-        double result = e.evaluate(operands.get(0), operators.get(0), operands.get(1));
+        Calculator calculator = new Calculator();
+        double result = calculator.calculate(operands.get(0), operators.get(0), operands.get(1));
         for (int i = 1; i < operators.size(); i++) {
-            result = e.evaluate(result, operators.get(i), operands.get(i + 1));
+            result = calculator.calculate(result, operators.get(i), operands.get(i + 1));
         }
         return result;
     }
@@ -66,6 +57,7 @@ public class Evaluator {
         }
         return operators;
     }
+
     public String replaceExpression(String expression) {
         return expression.trim().replaceAll(" +", "")
                 .replaceAll("\\+", " + ")

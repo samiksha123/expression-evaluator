@@ -1,6 +1,8 @@
 package library;
 
 //import static org.junit.Assert.assertEquals;
+import library.evaluation.Evaluator;
+
 import static junit.framework.Assert.assertEquals;
 
 public class EvaluatorTest extends Evaluator {
@@ -21,6 +23,13 @@ public class EvaluatorTest extends Evaluator {
     @org.junit.Test
     public void test_if_only_one_operand_is_given() throws Exception {
         String expression = "22";
+        Evaluator e = new Evaluator();
+        double res = e.evaluateExpression(expression);
+        assertEquals(res,22.0);
+    }
+    @org.junit.Test(expected = IndexOutOfBoundsException.class)
+    public void test_if_only_one_operand_and_one_operator_is_given() throws Exception {
+        String expression = "22+";
         Evaluator e = new Evaluator();
         double res = e.evaluateExpression(expression);
         assertEquals(res,22.0);
@@ -197,5 +206,23 @@ public class EvaluatorTest extends Evaluator {
         Evaluator e = new Evaluator();
         double res = e.evaluateExpression("2 ^ (-3)");
         assertEquals(res,0.125);
+    }
+    @org.junit.Test
+    public void test_for_evaluate_multiple_operations_7() throws Exception {
+        Evaluator e = new Evaluator();
+        double res = e.evaluateExpression("8^(-1)");
+        assertEquals(res,0.125);
+    }
+    @org.junit.Test
+    public void test_for_evaluate_multiple_operations_8() throws Exception {
+        Evaluator e = new Evaluator();
+        double res = e.evaluateExpression(".5+.5");
+        assertEquals(res,1.0);
+    }
+    @org.junit.Test
+    public void test_for_evaluate_multiple_operations_9() throws Exception {
+        Evaluator e = new Evaluator();
+        double res = e.evaluateExpression("0.01+0.03");
+        assertEquals(res,0.04);
     }
 }
