@@ -6,18 +6,17 @@ import java.util.List;
 import library.operations.Operation;
 
 public class Expression {
-
+    private List<Double> operands = new ArrayList<Double>();
 
     public double evaluateExpression(String expr) throws Exception {
         String expression = new Parser(expr).replaceExpression(expr);
         expression = expression.replace("--", "");
         if (expression.contains("(")) {
             String res = evaluateWithBrackets(expression);
-            return evaluateExpression(res);
+            return new Expression().evaluateExpression(res);
         }
         if (!expression.contains(" ")) return Double.parseDouble(expression);
         String[] data = expression.split(" ");
-        List<Double> operands = new ArrayList<Double>();
         List<String> operators = getOperators(data, operands);
         double result = evaluateMultipleOperations(operands, operators);
         return result;
