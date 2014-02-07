@@ -2,22 +2,23 @@ package library.evaluation;
 
 import java.util.ArrayList;
 import java.util.List;
-public class Evaluator {
+
+import library.operations.Operation;
+
+public class Expression {
 
 
-    public double evaluateExpression(String expression) throws Exception {
-        String expr = replaceExpression(expression);
-        expr = expr.replace("--", "");
-        if (expr.contains("(")) {
-            String res = evaluateWithBrackets(expr);
+    public double evaluateExpression(String expr) throws Exception {
+        String expression = new Parser(expr).replaceExpression(expr);
+        expression = expression.replace("--", "");
+        if (expression.contains("(")) {
+            String res = evaluateWithBrackets(expression);
             return evaluateExpression(res);
         }
-        if (!expr.contains(" ")) return Double.parseDouble(expr);
+        if (!expression.contains(" ")) return Double.parseDouble(expression);
+        String[] data = expression.split(" ");
         List<Double> operands = new ArrayList<Double>();
-        List<String> operators = new ArrayList<String>();
-
-        Parser.parse(expr,operators,operands);
-
+        List<String> operators = getOperators(data, operands);
         double result = evaluateMultipleOperations(operands, operators);
         return result;
     }
@@ -47,16 +48,17 @@ public class Evaluator {
         return result;
     }
 
-    public String replaceExpression(String expression) {
-        return expression.trim().replaceAll(" +", "")
-                .replaceAll("\\+", " + ")
-                .replaceAll("\\-", " - ")
-                .replaceAll("\\*", " * ")
-                .replaceAll("\\/", " / ")
-                .replaceAll("\\(", "(")
-                .replaceAll("\\)", ")")
-                .replaceAll("\\^", " ^ ")
-                .replaceAll("  - ", " -")
-                .replaceFirst("^ - ", "-");
+    private List<String> getOperators(String[] data, List<Double> operands) {
+        List<String> operators = new ArrayList<String>();
+        for (String s : data) {
+            try {
+                Double number = Double.parseDouble(s);
+                operands.add(number);
+            } catch (Exception ex) {
+                operators.add(s);
+            }
+        }
+
+        return operators;
     }
 }

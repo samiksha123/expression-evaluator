@@ -5,7 +5,7 @@ import library.evaluation.Expression;
 
 import static junit.framework.Assert.assertEquals;
 
-public class ExpressionTest extends Expression {
+public class ExpressionTest  {
     @org.junit.Test
     public void testEvaluate() throws Exception {
         String expression = "2 + 3";

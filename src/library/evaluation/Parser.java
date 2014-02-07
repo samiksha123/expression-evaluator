@@ -6,8 +6,13 @@ import java.util.List;
  *resolve (a expression as String) into its component parts.
  */
 public class Parser {
+    private String text;
 
-    public static String format(String expression) {
+    public Parser(String text) {
+        this.text = text;
+    }
+
+    public String replaceExpression(String expression) {
         return expression.trim().replaceAll(" +", "")
                 .replaceAll("\\+", " + ")
                 .replaceAll("\\-", " - ")
