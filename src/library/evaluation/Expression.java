@@ -3,10 +3,19 @@ package library.evaluation;
 import java.util.ArrayList;
 import java.util.List;
 
-import library.operations.Operation;
-
 public class Expression {
-    private List<Double> operands = new ArrayList<Double>();
+    private List<Expression> operands = new ArrayList<>();
+
+    public Expression(Double value) {
+        this.value = value;
+    }
+
+    public Expression() {
+    }
+
+    private Double value;
+
+
 
     public double evaluateExpression(String expr) throws Exception {
         String expression = new Parser(expr).replaceExpression(expr);
@@ -17,8 +26,14 @@ public class Expression {
         }
         if (!expression.contains(" ")) return Double.parseDouble(expression);
         String[] data = expression.split(" ");
-        List<String> operators = getOperators(data, operands);
-        double result = evaluateMultipleOperations(operands, operators);
+        List<String> operators = getOperators(data);
+        this.operands = getOperands(data);
+        List<Double> values = new ArrayList<>();
+        for (Expression sd : operands) {
+            values.add(sd.value);
+        }
+
+        double result = evaluateMultipleOperations(values, operators);
         return result;
     }
 
@@ -47,12 +62,11 @@ public class Expression {
         return result;
     }
 
-    private List<String> getOperators(String[] data, List<Double> operands) {
+    private List<String> getOperators(String[] data) {
         List<String> operators = new ArrayList<String>();
         for (String s : data) {
             try {
-                Double number = Double.parseDouble(s);
-                operands.add(number);
+                Double.parseDouble(s);
             } catch (Exception ex) {
                 operators.add(s);
             }
@@ -60,4 +74,20 @@ public class Expression {
 
         return operators;
     }
+
+    private List<Expression> getOperands(String[] data) {
+        List<Expression> expressions = new ArrayList<>();
+        for (String s : data) {
+            try {
+                double v = Double.parseDouble(s);
+                expressions.add(new Expression(v));
+            } catch (Exception ex) {
+                // ignore
+            }
+        }
+
+        return expressions;
+    }
+
+
 }
