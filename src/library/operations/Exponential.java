@@ -1,6 +1,5 @@
 package library.operations;
 
-import library.operations.Operation;
 
 /**
  * Created by samiksha on 2/7/14.

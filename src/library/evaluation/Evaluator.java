@@ -5,17 +5,19 @@ import java.util.List;
 public class Evaluator {
 
 
-    public double evaluateExpression(String expression) throws Exception {
-        String exp = replaceExpression(expression);
-        exp = exp.replace("--", "");
-        if (exp.contains("(")) {
-            String res = evaluateWithBrackets(exp);
+    public double evaluateExpression(String expr) throws Exception {
+        String expression = Parser.format(expr);
+        expression = expression.replace("--", "");
+        if (expression.contains("(")) {
+            String res = evaluateWithBrackets(expression);
             return evaluateExpression(res);
         }
-        if (!exp.contains(" ")) return Double.parseDouble(exp);
-        String[] data = exp.split(" ");
+        if (!expression.contains(" ")) return Double.parseDouble(expression);
         List<Double> operands = new ArrayList<Double>();
-        List<String> operators = getOperators(data, operands);
+        List<String> operators = new ArrayList<String>();
+
+        Parser.parse(expression,operators,operands);
+
         double result = evaluateMultipleOperations(operands, operators);
         return result;
     }
@@ -45,29 +47,5 @@ public class Evaluator {
         return result;
     }
 
-    private List<String> getOperators(String[] data, List<Double> operands) {
-        List<String> operators = new ArrayList<String>();
-        for (String s : data) {
-            try {
-                Double number = Double.parseDouble(s);
-                operands.add(number);
-            } catch (Exception ex) {
-                operators.add(s);
-            }
-        }
-        return operators;
-    }
 
-    public String replaceExpression(String expression) {
-        return expression.trim().replaceAll(" +", "")
-                .replaceAll("\\+", " + ")
-                .replaceAll("\\-", " - ")
-                .replaceAll("\\*", " * ")
-                .replaceAll("\\/", " / ")
-                .replaceAll("\\(", "(")
-                .replaceAll("\\)", ")")
-                .replaceAll("\\^", " ^ ")
-                .replaceAll("  - ", " -")
-                .replaceFirst("^ - ", "-");
-    }
 }

@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by samiksha on 2/7/14.
+ *Calculate result based on operator
  */
 public class Calculator {
     Map<String, Operation> operators = new HashMap();
